@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marquee Logo Mata Pelajaran</title>
+    <style>
+        /* CSS untuk Marquee Logo */
+        body {
+            margin: 0;
+            font-family: sans-serif;
+            overflow-x: hidden; /* Mencegah scrollbar horizontal muncul */
+        }
+
+        /* Container untuk marquee, membatasi area yang terlihat */
+        .marquee-wrapper {
+            width: 100%;
+            overflow: hidden; /* Sangat penting: menyembunyikan konten yang di luar batas */
+            background-color: #e0e0e0; /* Warna latar belakang marquee, bisa diganti */
+            padding: 10px 0; /* Jarak atas dan bawah dalam marquee */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Opsional: Efek bayangan */
+        }
+
+        /* Konten marquee yang akan bergerak */
+        .marquee-content {
+            display: flex; /* Membuat semua elemen sejajar secara horizontal */
+            white-space: nowrap; /* Mencegah elemen turun ke baris baru */
+            animation: scroll-left 20s linear infinite; /* Animasi pergerakan */
+            /*
+                Penjelasan animasi:
+                - scroll-left: Nama animasi (sesuai @keyframes di bawah)
+                - 20s: Durasi satu siklus animasi (semakin besar, semakin lambat)
+                - linear: Kecepatan konstan
+                - infinite: Animasi berulang terus-menerus
+            */
+        }
+
+        /* Gaya untuk setiap gambar di dalam marquee */
+        .marquee-content img {
+            height: 40px; /* Tinggi gambar, bisa disesuaikan */
+            width: auto; /* Lebar otomatis agar proporsional */
+            margin: 0 25px; /* Jarak horizontal antar gambar, bisa disesuaikan */
+            vertical-align: middle; /* Memastikan gambar sejajar di tengah secara vertikal */
+            display: block; /* Menghilangkan spasi ekstra di bawah gambar */
+        }
+
+        /* Keyframes untuk mendefinisikan animasi pergerakan */
+        @keyframes scroll-left {
+            0% {
+                transform: translateX(0); /* Posisi awal: tidak bergeser */
+            }
+            100% {
+                transform: translateX(-50%); /* Posisi akhir: bergeser 50% dari lebar total konten ke kiri */
+                /*
+                    Menggeser -50% agar set gambar pertama keluar sepenuhnya,
+                    dan set gambar kedua tepat menggantikannya, menciptakan efek looping mulus.
+                */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="marquee-wrapper">
+        <div class="marquee-content">
+            <img src="IMG/logo english.jpg" alt="English">
+            <img src="IMG/logo infor.jpg" alt="Informatics">
+            <img src="IMG/logo pai.jpg" alt="Islamic Education">
+            <img src="IMG/logo senbud.jpg" alt="Seni Budaya">
+            <img src="IMG/logo ipas.jpg" alt="IPAS">
+
+            <img src="IMG/logo english.jpg" alt="English">
+            <img src="IMG/logo infor.jpg" alt="Informatics">
+            <img src="IMG/logo pai.jpg" alt="Islamic Education">
+            <img src="IMG/logo senbud.jpg" alt="Seni Budaya">
+            <img src="IMG/logo ipas.jpg" alt="IPAS">
+        </div>
+    </div>
+
+</body>
+</html>
